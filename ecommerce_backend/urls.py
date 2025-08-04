@@ -2,6 +2,7 @@ from django.contrib import admin
 from django.urls import path, include
 from django.http import JsonResponse
 from django.views.generic import RedirectView
+from django.conf import settings
 from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView
 from drf_yasg.views import get_schema_view
 from drf_yasg import openapi
@@ -42,3 +43,10 @@ urlpatterns = [
     path('api/products/', include('products.urls')),
     path('api/users/', include('users.urls')),
 ]
+
+# Add Debug Toolbar URLs only in development
+if settings.DEBUG:
+    import debug_toolbar
+    urlpatterns += [
+        path('__debug__/', include(debug_toolbar.urls)),
+    ]
