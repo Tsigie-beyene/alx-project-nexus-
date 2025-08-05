@@ -125,8 +125,8 @@ Content-Type: application/json
 **Response:**
 ```json
 {
-    "access": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9...",
-    "refresh": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9..."
+    "access": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9....",
+    "refresh": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9...."
 }
 ```
 
