@@ -1,0 +1,1072 @@
+INFO 2025-08-04 23:53:17,065 autoreload 3468 21456 Watching for file changes with StatReloader
+ERROR 2025-08-05 00:20:04,462 log 5268 14968 Internal Server Error: /api/products/categories/1/products/
+Traceback (most recent call last):
+  File "C:\Python312\Lib\site-packages\redis\connection.py", line 1079, in get_connection
+    connection = self._available_connections.pop()
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+IndexError: pop from empty list
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\PC\AppData\Roaming\Python\Python312\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC\AppData\Roaming\Python\Python312\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC\AppData\Roaming\Python\Python312\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC\AppData\Roaming\Python\Python312\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC\AppData\Roaming\Python\Python312\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC\AppData\Roaming\Python\Python312\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\PC\AppData\Roaming\Python\Python312\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\PC\AppData\Roaming\Python\Python312\site-packages\rest_framework\views.py", line 503, in dispatch
+    self.initial(request, *args, **kwargs)
+  File "C:\Users\PC\AppData\Roaming\Python\Python312\site-packages\rest_framework\views.py", line 422, in initial
+    self.check_throttles(request)
+  File "C:\Users\PC\AppData\Roaming\Python\Python312\site-packages\rest_framework\views.py", line 365, in check_throttles
+    if not throttle.allow_request(request, self):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC\AppData\Roaming\Python\Python312\site-packages\rest_framework\throttling.py", line 123, in allow_request
+    self.history = self.cache.get(self.key, [])
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC\AppData\Roaming\Python\Python312\site-packages\django\core\cache\backends\redis.py", line 188, in get
+    return self._cache.get(key, default)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC\AppData\Roaming\Python\Python312\site-packages\django\core\cache\backends\redis.py", line 100, in get
+    value = client.get(key)
+            ^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\redis\commands\core.py", line 1829, in get
+    return self.execute_command("GET", name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\redis\client.py", line 533, in execute_command
+    conn = self.connection or pool.get_connection(command_name, **options)
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\redis\connection.py", line 1081, in get_connection
+    connection = self.make_connection()
+                 ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\redis\connection.py", line 1121, in make_connection
+    return self.connection_class(**self.connection_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\redis\connection.py", line 581, in __init__
+    super().__init__(**kwargs)
+TypeError: AbstractConnection.__init__() got an unexpected keyword argument 'CLIENT_CLASS'
+INFO 2025-08-05 00:20:09,438 autoreload 11380 14356 Watching for file changes with StatReloader
+ERROR 2025-08-05 00:20:12,419 log 5268 14968 Internal Server Error: /api/products/categories/
+Traceback (most recent call last):
+  File "C:\Python312\Lib\site-packages\redis\connection.py", line 1079, in get_connection
+    connection = self._available_connections.pop()
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+IndexError: pop from empty list
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\PC\AppData\Roaming\Python\Python312\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC\AppData\Roaming\Python\Python312\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC\AppData\Roaming\Python\Python312\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC\AppData\Roaming\Python\Python312\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC\AppData\Roaming\Python\Python312\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC\AppData\Roaming\Python\Python312\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\PC\AppData\Roaming\Python\Python312\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\PC\AppData\Roaming\Python\Python312\site-packages\rest_framework\views.py", line 503, in dispatch
+    self.initial(request, *args, **kwargs)
+  File "C:\Users\PC\AppData\Roaming\Python\Python312\site-packages\rest_framework\views.py", line 422, in initial
+    self.check_throttles(request)
+  File "C:\Users\PC\AppData\Roaming\Python\Python312\site-packages\rest_framework\views.py", line 365, in check_throttles
+    if not throttle.allow_request(request, self):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC\AppData\Roaming\Python\Python312\site-packages\rest_framework\throttling.py", line 123, in allow_request
+    self.history = self.cache.get(self.key, [])
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC\AppData\Roaming\Python\Python312\site-packages\django\core\cache\backends\redis.py", line 188, in get
+    return self._cache.get(key, default)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC\AppData\Roaming\Python\Python312\site-packages\django\core\cache\backends\redis.py", line 100, in get
+    value = client.get(key)
+            ^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\redis\commands\core.py", line 1829, in get
+    return self.execute_command("GET", name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\redis\client.py", line 533, in execute_command
+    conn = self.connection or pool.get_connection(command_name, **options)
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\redis\connection.py", line 1081, in get_connection
+    connection = self.make_connection()
+                 ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\redis\connection.py", line 1121, in make_connection
+    return self.connection_class(**self.connection_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\redis\connection.py", line 581, in __init__
+    super().__init__(**kwargs)
+TypeError: AbstractConnection.__init__() got an unexpected keyword argument 'CLIENT_CLASS'
+ERROR 2025-08-05 00:20:19,686 log 5268 14968 Internal Server Error: /api/products/products/
+Traceback (most recent call last):
+  File "C:\Python312\Lib\site-packages\redis\connection.py", line 1079, in get_connection
+    connection = self._available_connections.pop()
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+IndexError: pop from empty list
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\PC\AppData\Roaming\Python\Python312\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC\AppData\Roaming\Python\Python312\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC\AppData\Roaming\Python\Python312\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC\AppData\Roaming\Python\Python312\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC\AppData\Roaming\Python\Python312\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC\AppData\Roaming\Python\Python312\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\PC\AppData\Roaming\Python\Python312\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\PC\AppData\Roaming\Python\Python312\site-packages\rest_framework\views.py", line 503, in dispatch
+    self.initial(request, *args, **kwargs)
+  File "C:\Users\PC\AppData\Roaming\Python\Python312\site-packages\rest_framework\views.py", line 422, in initial
+    self.check_throttles(request)
+  File "C:\Users\PC\AppData\Roaming\Python\Python312\site-packages\rest_framework\views.py", line 365, in check_throttles
+    if not throttle.allow_request(request, self):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC\AppData\Roaming\Python\Python312\site-packages\rest_framework\throttling.py", line 123, in allow_request
+    self.history = self.cache.get(self.key, [])
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC\AppData\Roaming\Python\Python312\site-packages\django\core\cache\backends\redis.py", line 188, in get
+    return self._cache.get(key, default)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC\AppData\Roaming\Python\Python312\site-packages\django\core\cache\backends\redis.py", line 100, in get
+    value = client.get(key)
+            ^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\redis\commands\core.py", line 1829, in get
+    return self.execute_command("GET", name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\redis\client.py", line 533, in execute_command
+    conn = self.connection or pool.get_connection(command_name, **options)
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\redis\connection.py", line 1081, in get_connection
+    connection = self.make_connection()
+                 ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\redis\connection.py", line 1121, in make_connection
+    return self.connection_class(**self.connection_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\redis\connection.py", line 581, in __init__
+    super().__init__(**kwargs)
+TypeError: AbstractConnection.__init__() got an unexpected keyword argument 'CLIENT_CLASS'
+WARNING 2025-08-05 00:20:30,163 log 5268 14968 Unauthorized: /api/products/products/
+ERROR 2025-08-05 00:20:34,785 log 5268 14968 Internal Server Error: /api/products/products/featured/
+Traceback (most recent call last):
+  File "C:\Python312\Lib\site-packages\redis\connection.py", line 1079, in get_connection
+    connection = self._available_connections.pop()
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+IndexError: pop from empty list
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\PC\AppData\Roaming\Python\Python312\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC\AppData\Roaming\Python\Python312\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC\AppData\Roaming\Python\Python312\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC\AppData\Roaming\Python\Python312\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC\AppData\Roaming\Python\Python312\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC\AppData\Roaming\Python\Python312\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\PC\AppData\Roaming\Python\Python312\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\PC\AppData\Roaming\Python\Python312\site-packages\rest_framework\views.py", line 503, in dispatch
+    self.initial(request, *args, **kwargs)
+  File "C:\Users\PC\AppData\Roaming\Python\Python312\site-packages\rest_framework\views.py", line 422, in initial
+    self.check_throttles(request)
+  File "C:\Users\PC\AppData\Roaming\Python\Python312\site-packages\rest_framework\views.py", line 365, in check_throttles
+    if not throttle.allow_request(request, self):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC\AppData\Roaming\Python\Python312\site-packages\rest_framework\throttling.py", line 123, in allow_request
+    self.history = self.cache.get(self.key, [])
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC\AppData\Roaming\Python\Python312\site-packages\django\core\cache\backends\redis.py", line 188, in get
+    return self._cache.get(key, default)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC\AppData\Roaming\Python\Python312\site-packages\django\core\cache\backends\redis.py", line 100, in get
+    value = client.get(key)
+            ^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\redis\commands\core.py", line 1829, in get
+    return self.execute_command("GET", name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\redis\client.py", line 533, in execute_command
+    conn = self.connection or pool.get_connection(command_name, **options)
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\redis\connection.py", line 1081, in get_connection
+    connection = self.make_connection()
+                 ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\redis\connection.py", line 1121, in make_connection
+    return self.connection_class(**self.connection_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\redis\connection.py", line 581, in __init__
+    super().__init__(**kwargs)
+TypeError: AbstractConnection.__init__() got an unexpected keyword argument 'CLIENT_CLASS'
+ERROR 2025-08-05 00:20:39,609 log 5268 14968 Internal Server Error: /api/products/products/
+Traceback (most recent call last):
+  File "C:\Python312\Lib\site-packages\redis\connection.py", line 1079, in get_connection
+    connection = self._available_connections.pop()
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+IndexError: pop from empty list
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\PC\AppData\Roaming\Python\Python312\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC\AppData\Roaming\Python\Python312\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC\AppData\Roaming\Python\Python312\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC\AppData\Roaming\Python\Python312\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC\AppData\Roaming\Python\Python312\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC\AppData\Roaming\Python\Python312\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\PC\AppData\Roaming\Python\Python312\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\PC\AppData\Roaming\Python\Python312\site-packages\rest_framework\views.py", line 503, in dispatch
+    self.initial(request, *args, **kwargs)
+  File "C:\Users\PC\AppData\Roaming\Python\Python312\site-packages\rest_framework\views.py", line 422, in initial
+    self.check_throttles(request)
+  File "C:\Users\PC\AppData\Roaming\Python\Python312\site-packages\rest_framework\views.py", line 365, in check_throttles
+    if not throttle.allow_request(request, self):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC\AppData\Roaming\Python\Python312\site-packages\rest_framework\throttling.py", line 123, in allow_request
+    self.history = self.cache.get(self.key, [])
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC\AppData\Roaming\Python\Python312\site-packages\django\core\cache\backends\redis.py", line 188, in get
+    return self._cache.get(key, default)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC\AppData\Roaming\Python\Python312\site-packages\django\core\cache\backends\redis.py", line 100, in get
+    value = client.get(key)
+            ^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\redis\commands\core.py", line 1829, in get
+    return self.execute_command("GET", name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\redis\client.py", line 533, in execute_command
+    conn = self.connection or pool.get_connection(command_name, **options)
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\redis\connection.py", line 1081, in get_connection
+    connection = self.make_connection()
+                 ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\redis\connection.py", line 1121, in make_connection
+    return self.connection_class(**self.connection_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\redis\connection.py", line 581, in __init__
+    super().__init__(**kwargs)
+TypeError: AbstractConnection.__init__() got an unexpected keyword argument 'CLIENT_CLASS'
+ERROR 2025-08-05 00:20:44,912 log 5268 14968 Internal Server Error: /api/products/products/
+Traceback (most recent call last):
+  File "C:\Python312\Lib\site-packages\redis\connection.py", line 1079, in get_connection
+    connection = self._available_connections.pop()
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+IndexError: pop from empty list
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\PC\AppData\Roaming\Python\Python312\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC\AppData\Roaming\Python\Python312\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC\AppData\Roaming\Python\Python312\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC\AppData\Roaming\Python\Python312\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC\AppData\Roaming\Python\Python312\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC\AppData\Roaming\Python\Python312\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\PC\AppData\Roaming\Python\Python312\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\PC\AppData\Roaming\Python\Python312\site-packages\rest_framework\views.py", line 503, in dispatch
+    self.initial(request, *args, **kwargs)
+  File "C:\Users\PC\AppData\Roaming\Python\Python312\site-packages\rest_framework\views.py", line 422, in initial
+    self.check_throttles(request)
+  File "C:\Users\PC\AppData\Roaming\Python\Python312\site-packages\rest_framework\views.py", line 365, in check_throttles
+    if not throttle.allow_request(request, self):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC\AppData\Roaming\Python\Python312\site-packages\rest_framework\throttling.py", line 123, in allow_request
+    self.history = self.cache.get(self.key, [])
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC\AppData\Roaming\Python\Python312\site-packages\django\core\cache\backends\redis.py", line 188, in get
+    return self._cache.get(key, default)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC\AppData\Roaming\Python\Python312\site-packages\django\core\cache\backends\redis.py", line 100, in get
+    value = client.get(key)
+            ^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\redis\commands\core.py", line 1829, in get
+    return self.execute_command("GET", name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\redis\client.py", line 533, in execute_command
+    conn = self.connection or pool.get_connection(command_name, **options)
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\redis\connection.py", line 1081, in get_connection
+    connection = self.make_connection()
+                 ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\redis\connection.py", line 1121, in make_connection
+    return self.connection_class(**self.connection_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\redis\connection.py", line 581, in __init__
+    super().__init__(**kwargs)
+TypeError: AbstractConnection.__init__() got an unexpected keyword argument 'CLIENT_CLASS'
+ERROR 2025-08-05 00:20:49,900 log 5268 14968 Internal Server Error: /api/products/products/7/
+Traceback (most recent call last):
+  File "C:\Python312\Lib\site-packages\redis\connection.py", line 1079, in get_connection
+    connection = self._available_connections.pop()
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+IndexError: pop from empty list
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\PC\AppData\Roaming\Python\Python312\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC\AppData\Roaming\Python\Python312\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC\AppData\Roaming\Python\Python312\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC\AppData\Roaming\Python\Python312\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC\AppData\Roaming\Python\Python312\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC\AppData\Roaming\Python\Python312\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\PC\AppData\Roaming\Python\Python312\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\PC\AppData\Roaming\Python\Python312\site-packages\rest_framework\views.py", line 503, in dispatch
+    self.initial(request, *args, **kwargs)
+  File "C:\Users\PC\AppData\Roaming\Python\Python312\site-packages\rest_framework\views.py", line 422, in initial
+    self.check_throttles(request)
+  File "C:\Users\PC\AppData\Roaming\Python\Python312\site-packages\rest_framework\views.py", line 365, in check_throttles
+    if not throttle.allow_request(request, self):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC\AppData\Roaming\Python\Python312\site-packages\rest_framework\throttling.py", line 123, in allow_request
+    self.history = self.cache.get(self.key, [])
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC\AppData\Roaming\Python\Python312\site-packages\django\core\cache\backends\redis.py", line 188, in get
+    return self._cache.get(key, default)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC\AppData\Roaming\Python\Python312\site-packages\django\core\cache\backends\redis.py", line 100, in get
+    value = client.get(key)
+            ^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\redis\commands\core.py", line 1829, in get
+    return self.execute_command("GET", name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\redis\client.py", line 533, in execute_command
+    conn = self.connection or pool.get_connection(command_name, **options)
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\redis\connection.py", line 1081, in get_connection
+    connection = self.make_connection()
+                 ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\redis\connection.py", line 1121, in make_connection
+    return self.connection_class(**self.connection_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\redis\connection.py", line 581, in __init__
+    super().__init__(**kwargs)
+TypeError: AbstractConnection.__init__() got an unexpected keyword argument 'CLIENT_CLASS'
+ERROR 2025-08-05 00:20:58,984 log 5268 14968 Internal Server Error: /api/products/products/
+Traceback (most recent call last):
+  File "C:\Python312\Lib\site-packages\redis\connection.py", line 1079, in get_connection
+    connection = self._available_connections.pop()
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+IndexError: pop from empty list
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\PC\AppData\Roaming\Python\Python312\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC\AppData\Roaming\Python\Python312\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC\AppData\Roaming\Python\Python312\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC\AppData\Roaming\Python\Python312\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC\AppData\Roaming\Python\Python312\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC\AppData\Roaming\Python\Python312\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\PC\AppData\Roaming\Python\Python312\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\PC\AppData\Roaming\Python\Python312\site-packages\rest_framework\views.py", line 503, in dispatch
+    self.initial(request, *args, **kwargs)
+  File "C:\Users\PC\AppData\Roaming\Python\Python312\site-packages\rest_framework\views.py", line 422, in initial
+    self.check_throttles(request)
+  File "C:\Users\PC\AppData\Roaming\Python\Python312\site-packages\rest_framework\views.py", line 365, in check_throttles
+    if not throttle.allow_request(request, self):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC\AppData\Roaming\Python\Python312\site-packages\rest_framework\throttling.py", line 123, in allow_request
+    self.history = self.cache.get(self.key, [])
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC\AppData\Roaming\Python\Python312\site-packages\django\core\cache\backends\redis.py", line 188, in get
+    return self._cache.get(key, default)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC\AppData\Roaming\Python\Python312\site-packages\django\core\cache\backends\redis.py", line 100, in get
+    value = client.get(key)
+            ^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\redis\commands\core.py", line 1829, in get
+    return self.execute_command("GET", name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\redis\client.py", line 533, in execute_command
+    conn = self.connection or pool.get_connection(command_name, **options)
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\redis\connection.py", line 1081, in get_connection
+    connection = self.make_connection()
+                 ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\redis\connection.py", line 1121, in make_connection
+    return self.connection_class(**self.connection_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\redis\connection.py", line 581, in __init__
+    super().__init__(**kwargs)
+TypeError: AbstractConnection.__init__() got an unexpected keyword argument 'CLIENT_CLASS'
+ERROR 2025-08-05 00:21:44,971 log 5268 14968 Internal Server Error: /api/users/change-password/
+Traceback (most recent call last):
+  File "C:\Python312\Lib\site-packages\redis\connection.py", line 1079, in get_connection
+    connection = self._available_connections.pop()
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+IndexError: pop from empty list
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\PC\AppData\Roaming\Python\Python312\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC\AppData\Roaming\Python\Python312\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC\AppData\Roaming\Python\Python312\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC\AppData\Roaming\Python\Python312\site-packages\django\views\generic\base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC\AppData\Roaming\Python\Python312\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC\AppData\Roaming\Python\Python312\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\PC\AppData\Roaming\Python\Python312\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\PC\AppData\Roaming\Python\Python312\site-packages\rest_framework\views.py", line 503, in dispatch
+    self.initial(request, *args, **kwargs)
+  File "C:\Users\PC\AppData\Roaming\Python\Python312\site-packages\rest_framework\views.py", line 422, in initial
+    self.check_throttles(request)
+  File "C:\Users\PC\AppData\Roaming\Python\Python312\site-packages\rest_framework\views.py", line 365, in check_throttles
+    if not throttle.allow_request(request, self):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC\AppData\Roaming\Python\Python312\site-packages\rest_framework\throttling.py", line 123, in allow_request
+    self.history = self.cache.get(self.key, [])
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC\AppData\Roaming\Python\Python312\site-packages\django\core\cache\backends\redis.py", line 188, in get
+    return self._cache.get(key, default)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC\AppData\Roaming\Python\Python312\site-packages\django\core\cache\backends\redis.py", line 100, in get
+    value = client.get(key)
+            ^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\redis\commands\core.py", line 1829, in get
+    return self.execute_command("GET", name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\redis\client.py", line 533, in execute_command
+    conn = self.connection or pool.get_connection(command_name, **options)
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\redis\connection.py", line 1081, in get_connection
+    connection = self.make_connection()
+                 ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\redis\connection.py", line 1121, in make_connection
+    return self.connection_class(**self.connection_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\redis\connection.py", line 581, in __init__
+    super().__init__(**kwargs)
+TypeError: AbstractConnection.__init__() got an unexpected keyword argument 'CLIENT_CLASS'
+ERROR 2025-08-05 00:21:49,218 log 5268 14968 Internal Server Error: /api/users/change-password/
+Traceback (most recent call last):
+  File "C:\Python312\Lib\site-packages\redis\connection.py", line 1079, in get_connection
+    connection = self._available_connections.pop()
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+IndexError: pop from empty list
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\PC\AppData\Roaming\Python\Python312\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC\AppData\Roaming\Python\Python312\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC\AppData\Roaming\Python\Python312\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC\AppData\Roaming\Python\Python312\site-packages\django\views\generic\base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC\AppData\Roaming\Python\Python312\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC\AppData\Roaming\Python\Python312\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\PC\AppData\Roaming\Python\Python312\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\PC\AppData\Roaming\Python\Python312\site-packages\rest_framework\views.py", line 503, in dispatch
+    self.initial(request, *args, **kwargs)
+  File "C:\Users\PC\AppData\Roaming\Python\Python312\site-packages\rest_framework\views.py", line 422, in initial
+    self.check_throttles(request)
+  File "C:\Users\PC\AppData\Roaming\Python\Python312\site-packages\rest_framework\views.py", line 365, in check_throttles
+    if not throttle.allow_request(request, self):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC\AppData\Roaming\Python\Python312\site-packages\rest_framework\throttling.py", line 123, in allow_request
+    self.history = self.cache.get(self.key, [])
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC\AppData\Roaming\Python\Python312\site-packages\django\core\cache\backends\redis.py", line 188, in get
+    return self._cache.get(key, default)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC\AppData\Roaming\Python\Python312\site-packages\django\core\cache\backends\redis.py", line 100, in get
+    value = client.get(key)
+            ^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\redis\commands\core.py", line 1829, in get
+    return self.execute_command("GET", name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\redis\client.py", line 533, in execute_command
+    conn = self.connection or pool.get_connection(command_name, **options)
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\redis\connection.py", line 1081, in get_connection
+    connection = self.make_connection()
+                 ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\redis\connection.py", line 1121, in make_connection
+    return self.connection_class(**self.connection_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\redis\connection.py", line 581, in __init__
+    super().__init__(**kwargs)
+TypeError: AbstractConnection.__init__() got an unexpected keyword argument 'CLIENT_CLASS'
+ERROR 2025-08-05 00:21:53,370 log 5268 14968 Internal Server Error: /api/users/profile/
+Traceback (most recent call last):
+  File "C:\Python312\Lib\site-packages\redis\connection.py", line 1079, in get_connection
+    connection = self._available_connections.pop()
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+IndexError: pop from empty list
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\PC\AppData\Roaming\Python\Python312\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC\AppData\Roaming\Python\Python312\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC\AppData\Roaming\Python\Python312\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC\AppData\Roaming\Python\Python312\site-packages\django\views\generic\base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC\AppData\Roaming\Python\Python312\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC\AppData\Roaming\Python\Python312\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\PC\AppData\Roaming\Python\Python312\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\PC\AppData\Roaming\Python\Python312\site-packages\rest_framework\views.py", line 503, in dispatch
+    self.initial(request, *args, **kwargs)
+  File "C:\Users\PC\AppData\Roaming\Python\Python312\site-packages\rest_framework\views.py", line 422, in initial
+    self.check_throttles(request)
+  File "C:\Users\PC\AppData\Roaming\Python\Python312\site-packages\rest_framework\views.py", line 365, in check_throttles
+    if not throttle.allow_request(request, self):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC\AppData\Roaming\Python\Python312\site-packages\rest_framework\throttling.py", line 123, in allow_request
+    self.history = self.cache.get(self.key, [])
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC\AppData\Roaming\Python\Python312\site-packages\django\core\cache\backends\redis.py", line 188, in get
+    return self._cache.get(key, default)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC\AppData\Roaming\Python\Python312\site-packages\django\core\cache\backends\redis.py", line 100, in get
+    value = client.get(key)
+            ^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\redis\commands\core.py", line 1829, in get
+    return self.execute_command("GET", name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\redis\client.py", line 533, in execute_command
+    conn = self.connection or pool.get_connection(command_name, **options)
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\redis\connection.py", line 1081, in get_connection
+    connection = self.make_connection()
+                 ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\redis\connection.py", line 1121, in make_connection
+    return self.connection_class(**self.connection_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\redis\connection.py", line 581, in __init__
+    super().__init__(**kwargs)
+TypeError: AbstractConnection.__init__() got an unexpected keyword argument 'CLIENT_CLASS'
+ERROR 2025-08-05 00:21:57,478 log 5268 14968 Internal Server Error: /api/users/profile/
+Traceback (most recent call last):
+  File "C:\Python312\Lib\site-packages\redis\connection.py", line 1079, in get_connection
+    connection = self._available_connections.pop()
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+IndexError: pop from empty list
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\PC\AppData\Roaming\Python\Python312\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC\AppData\Roaming\Python\Python312\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC\AppData\Roaming\Python\Python312\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC\AppData\Roaming\Python\Python312\site-packages\django\views\generic\base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC\AppData\Roaming\Python\Python312\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC\AppData\Roaming\Python\Python312\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\PC\AppData\Roaming\Python\Python312\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\PC\AppData\Roaming\Python\Python312\site-packages\rest_framework\views.py", line 503, in dispatch
+    self.initial(request, *args, **kwargs)
+  File "C:\Users\PC\AppData\Roaming\Python\Python312\site-packages\rest_framework\views.py", line 422, in initial
+    self.check_throttles(request)
+  File "C:\Users\PC\AppData\Roaming\Python\Python312\site-packages\rest_framework\views.py", line 365, in check_throttles
+    if not throttle.allow_request(request, self):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC\AppData\Roaming\Python\Python312\site-packages\rest_framework\throttling.py", line 123, in allow_request
+    self.history = self.cache.get(self.key, [])
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC\AppData\Roaming\Python\Python312\site-packages\django\core\cache\backends\redis.py", line 188, in get
+    return self._cache.get(key, default)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC\AppData\Roaming\Python\Python312\site-packages\django\core\cache\backends\redis.py", line 100, in get
+    value = client.get(key)
+            ^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\redis\commands\core.py", line 1829, in get
+    return self.execute_command("GET", name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\redis\client.py", line 533, in execute_command
+    conn = self.connection or pool.get_connection(command_name, **options)
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\redis\connection.py", line 1081, in get_connection
+    connection = self.make_connection()
+                 ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\redis\connection.py", line 1121, in make_connection
+    return self.connection_class(**self.connection_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\redis\connection.py", line 581, in __init__
+    super().__init__(**kwargs)
+TypeError: AbstractConnection.__init__() got an unexpected keyword argument 'CLIENT_CLASS'
+ERROR 2025-08-05 00:21:57,605 log 5268 14968 Internal Server Error: /api/users/register/
+Traceback (most recent call last):
+  File "C:\Python312\Lib\site-packages\redis\connection.py", line 1079, in get_connection
+    connection = self._available_connections.pop()
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+IndexError: pop from empty list
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\PC\AppData\Roaming\Python\Python312\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC\AppData\Roaming\Python\Python312\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC\AppData\Roaming\Python\Python312\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC\AppData\Roaming\Python\Python312\site-packages\django\views\generic\base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC\AppData\Roaming\Python\Python312\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC\AppData\Roaming\Python\Python312\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\PC\AppData\Roaming\Python\Python312\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\PC\AppData\Roaming\Python\Python312\site-packages\rest_framework\views.py", line 503, in dispatch
+    self.initial(request, *args, **kwargs)
+  File "C:\Users\PC\AppData\Roaming\Python\Python312\site-packages\rest_framework\views.py", line 422, in initial
+    self.check_throttles(request)
+  File "C:\Users\PC\AppData\Roaming\Python\Python312\site-packages\rest_framework\views.py", line 365, in check_throttles
+    if not throttle.allow_request(request, self):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC\AppData\Roaming\Python\Python312\site-packages\rest_framework\throttling.py", line 123, in allow_request
+    self.history = self.cache.get(self.key, [])
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC\AppData\Roaming\Python\Python312\site-packages\django\core\cache\backends\redis.py", line 188, in get
+    return self._cache.get(key, default)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC\AppData\Roaming\Python\Python312\site-packages\django\core\cache\backends\redis.py", line 100, in get
+    value = client.get(key)
+            ^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\redis\commands\core.py", line 1829, in get
+    return self.execute_command("GET", name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\redis\client.py", line 533, in execute_command
+    conn = self.connection or pool.get_connection(command_name, **options)
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\redis\connection.py", line 1081, in get_connection
+    connection = self.make_connection()
+                 ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\redis\connection.py", line 1121, in make_connection
+    return self.connection_class(**self.connection_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\redis\connection.py", line 581, in __init__
+    super().__init__(**kwargs)
+TypeError: AbstractConnection.__init__() got an unexpected keyword argument 'CLIENT_CLASS'
+ERROR 2025-08-05 00:21:57,800 log 5268 14968 Internal Server Error: /api/users/register/
+Traceback (most recent call last):
+  File "C:\Python312\Lib\site-packages\redis\connection.py", line 1079, in get_connection
+    connection = self._available_connections.pop()
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+IndexError: pop from empty list
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\PC\AppData\Roaming\Python\Python312\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC\AppData\Roaming\Python\Python312\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC\AppData\Roaming\Python\Python312\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC\AppData\Roaming\Python\Python312\site-packages\django\views\generic\base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC\AppData\Roaming\Python\Python312\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC\AppData\Roaming\Python\Python312\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\PC\AppData\Roaming\Python\Python312\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\PC\AppData\Roaming\Python\Python312\site-packages\rest_framework\views.py", line 503, in dispatch
+    self.initial(request, *args, **kwargs)
+  File "C:\Users\PC\AppData\Roaming\Python\Python312\site-packages\rest_framework\views.py", line 422, in initial
+    self.check_throttles(request)
+  File "C:\Users\PC\AppData\Roaming\Python\Python312\site-packages\rest_framework\views.py", line 365, in check_throttles
+    if not throttle.allow_request(request, self):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC\AppData\Roaming\Python\Python312\site-packages\rest_framework\throttling.py", line 123, in allow_request
+    self.history = self.cache.get(self.key, [])
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC\AppData\Roaming\Python\Python312\site-packages\django\core\cache\backends\redis.py", line 188, in get
+    return self._cache.get(key, default)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC\AppData\Roaming\Python\Python312\site-packages\django\core\cache\backends\redis.py", line 100, in get
+    value = client.get(key)
+            ^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\redis\commands\core.py", line 1829, in get
+    return self.execute_command("GET", name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\redis\client.py", line 533, in execute_command
+    conn = self.connection or pool.get_connection(command_name, **options)
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\redis\connection.py", line 1081, in get_connection
+    connection = self.make_connection()
+                 ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\redis\connection.py", line 1121, in make_connection
+    return self.connection_class(**self.connection_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\redis\connection.py", line 581, in __init__
+    super().__init__(**kwargs)
+TypeError: AbstractConnection.__init__() got an unexpected keyword argument 'CLIENT_CLASS'
+INFO 2025-08-05 00:24:15,366 autoreload 11380 14356 C:\Users\PC\Desktop\alx-project-nexus\ecommerce_backend\ecommerce_backend\settings.py changed, reloading.
+INFO 2025-08-05 00:24:17,493 autoreload 1660 14572 Watching for file changes with StatReloader
+WARNING 2025-08-05 00:24:58,384 log 21548 11136 Unauthorized: /api/products/products/
+INFO 2025-08-05 00:25:36,305 autoreload 1660 14572 C:\Users\PC\Desktop\alx-project-nexus\ecommerce_backend\ecommerce_backend\settings.py changed, reloading.
+INFO 2025-08-05 00:25:56,756 autoreload 20704 15856 Watching for file changes with StatReloader
+INFO 2025-08-05 00:34:28,841 autoreload 10268 19476 Watching for file changes with StatReloader
+INFO 2025-08-05 00:34:53,270 basehttp 10268 16052 "GET /admin/auth/group/add/ HTTP/1.1" 302 0
+INFO 2025-08-05 00:34:53,419 basehttp 10268 16052 "GET /admin/login/?next=/admin/auth/group/add/ HTTP/1.1" 200 12493
+INFO 2025-08-05 00:34:53,560 basehttp 10268 5284 "GET /static/admin/css/login.css HTTP/1.1" 304 0
+INFO 2025-08-05 00:34:53,561 basehttp 10268 16052 "GET /static/admin/css/base.css HTTP/1.1" 304 0
+INFO 2025-08-05 00:34:53,561 basehttp 10268 18872 "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 304 0
+INFO 2025-08-05 00:34:53,563 basehttp 10268 7736 "GET /static/admin/css/dark_mode.css HTTP/1.1" 304 0
+INFO 2025-08-05 00:34:53,567 basehttp 10268 1704 "GET /static/admin/css/responsive.css HTTP/1.1" 304 0
+INFO 2025-08-05 00:34:53,571 basehttp 10268 5284 "GET /static/admin/js/theme.js HTTP/1.1" 304 0
+INFO 2025-08-05 00:34:53,574 basehttp 10268 12424 "GET /static/debug_toolbar/css/toolbar.css HTTP/1.1" 304 0
+INFO 2025-08-05 00:34:53,577 basehttp 10268 16052 "GET /static/debug_toolbar/js/toolbar.js HTTP/1.1" 304 0
+INFO 2025-08-05 00:34:53,601 basehttp 10268 16052 "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 304 0
+INFO 2025-08-05 00:34:53,607 basehttp 10268 16052 "GET /static/debug_toolbar/css/print.css HTTP/1.1" 304 0
+INFO 2025-08-05 00:34:53,663 basehttp 10268 16052 "GET /static/debug_toolbar/js/utils.js HTTP/1.1" 304 0
+INFO 2025-08-05 00:35:01,032 basehttp 10268 7920 "GET / HTTP/1.1" 200 235
+INFO 2025-08-05 00:35:06,464 basehttp 10268 7920 "GET /admin/ HTTP/1.1" 302 0
+INFO 2025-08-05 00:35:06,520 basehttp 10268 7920 "GET /admin/login/?next=/admin/ HTTP/1.1" 200 12462
+INFO 2025-08-05 00:35:09,810 basehttp 10268 7920 "GET /swagger/ HTTP/1.1" 200 10517
+INFO 2025-08-05 00:35:10,206 basehttp 10268 7920 "GET /swagger/?format=openapi HTTP/1.1" 200 15564
+WARNING 2025-08-05 00:36:51,366 log 18812 21100 Unauthorized: /api/products/products/
+WARNING 2025-08-05 00:37:42,135 log 18812 21100 Bad Request: /api/users/change-password/
+WARNING 2025-08-05 00:37:52,946 log 18812 21100 Bad Request: /api/users/register/
+INFO 2025-08-05 00:40:32,722 autoreload 1916 3416 Watching for file changes with StatReloader
+INFO 2025-08-05 00:40:49,640 basehttp 1916 18508 "GET /swagger/ HTTP/1.1" 200 10518
+INFO 2025-08-05 00:40:50,095 basehttp 1916 18508 "GET /swagger/?format=openapi HTTP/1.1" 200 15564
+INFO 2025-08-05 00:40:52,780 basehttp 1916 18508 "GET /swagger/ HTTP/1.1" 200 10517
+INFO 2025-08-05 00:40:53,159 basehttp 1916 18508 "GET /swagger/?format=openapi HTTP/1.1" 200 15564
+INFO 2025-08-05 00:41:36,509 basehttp 1916 2824 "GET /admin/ HTTP/1.1" 302 0
+INFO 2025-08-05 00:41:36,637 basehttp 1916 2824 "GET /admin/login/?next=/admin/ HTTP/1.1" 200 12463
+ERROR 2025-08-05 00:41:55,616 log 1916 1056 Internal Server Error: /admin/login/
+Traceback (most recent call last):
+  File "C:\Users\PC\Desktop\alx-project-nexus\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC\Desktop\alx-project-nexus\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC\Desktop\alx-project-nexus\venv\Lib\site-packages\django\utils\decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC\Desktop\alx-project-nexus\venv\Lib\site-packages\django\views\decorators\cache.py", line 80, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC\Desktop\alx-project-nexus\venv\Lib\site-packages\django\contrib\admin\sites.py", line 449, in login
+    return LoginView.as_view(**defaults)(request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC\Desktop\alx-project-nexus\venv\Lib\site-packages\django\views\generic\base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC\Desktop\alx-project-nexus\venv\Lib\site-packages\django\utils\decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC\Desktop\alx-project-nexus\venv\Lib\site-packages\django\utils\decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC\Desktop\alx-project-nexus\venv\Lib\site-packages\django\views\decorators\debug.py", line 143, in sensitive_post_parameters_wrapper
+    return view(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC\Desktop\alx-project-nexus\venv\Lib\site-packages\django\utils\decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC\Desktop\alx-project-nexus\venv\Lib\site-packages\django\utils\decorators.py", line 192, in _view_wrapper
+    result = _process_exception(request, e)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC\Desktop\alx-project-nexus\venv\Lib\site-packages\django\utils\decorators.py", line 190, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC\Desktop\alx-project-nexus\venv\Lib\site-packages\django\utils\decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC\Desktop\alx-project-nexus\venv\Lib\site-packages\django\views\decorators\cache.py", line 80, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC\Desktop\alx-project-nexus\venv\Lib\site-packages\django\contrib\auth\views.py", line 89, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC\Desktop\alx-project-nexus\venv\Lib\site-packages\django\views\generic\base.py", line 144, in dispatch
+    return handler(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC\Desktop\alx-project-nexus\venv\Lib\site-packages\django\views\generic\edit.py", line 151, in post
+    return self.form_valid(form)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC\Desktop\alx-project-nexus\venv\Lib\site-packages\django\contrib\auth\views.py", line 108, in form_valid
+    auth_login(self.request, form.get_user())
+  File "C:\Users\PC\Desktop\alx-project-nexus\venv\Lib\site-packages\django\contrib\auth\__init__.py", line 197, in login
+    user_logged_in.send(sender=user.__class__, request=request, user=user)
+  File "C:\Users\PC\Desktop\alx-project-nexus\venv\Lib\site-packages\django\dispatch\dispatcher.py", line 189, in send
+    response = receiver(signal=self, sender=sender, **named)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC\Desktop\alx-project-nexus\venv\Lib\site-packages\django\contrib\auth\models.py", line 24, in update_last_login
+    user.save(update_fields=["last_login"])
+  File "C:\Users\PC\Desktop\alx-project-nexus\venv\Lib\site-packages\django\contrib\auth\base_user.py", line 65, in save
+    super().save(*args, **kwargs)
+  File "C:\Users\PC\Desktop\alx-project-nexus\venv\Lib\site-packages\django\db\models\base.py", line 902, in save
+    self.save_base(
+  File "C:\Users\PC\Desktop\alx-project-nexus\venv\Lib\site-packages\django\db\models\base.py", line 1023, in save_base
+    post_save.send(
+  File "C:\Users\PC\Desktop\alx-project-nexus\venv\Lib\site-packages\django\dispatch\dispatcher.py", line 189, in send
+    response = receiver(signal=self, sender=sender, **named)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC\Desktop\alx-project-nexus\ecommerce_backend\users\models.py", line 34, in save_user_profile
+    instance.profile.save()
+    ^^^^^^^^^^^^^^^^
+  File "C:\Users\PC\Desktop\alx-project-nexus\venv\Lib\site-packages\django\db\models\fields\related_descriptors.py", line 534, in __get__
+    raise self.RelatedObjectDoesNotExist(
+django.contrib.auth.models.User.profile.RelatedObjectDoesNotExist: User has no profile.
+ERROR 2025-08-05 00:41:55,956 basehttp 1916 1056 "POST /admin/login/?next=/admin/ HTTP/1.1" 500 204078
+INFO 2025-08-05 00:42:10,260 basehttp 1916 19540 "GET /admin/ HTTP/1.1" 302 0
+INFO 2025-08-05 00:42:10,326 basehttp 1916 19540 "GET /admin/login/?next=/admin/ HTTP/1.1" 200 12462
+INFO 2025-08-05 00:42:29,324 basehttp 1916 12856 "POST /admin/login/?next=/admin/ HTTP/1.1" 200 12628
+INFO 2025-08-05 00:42:42,644 basehttp 1916 18496 "POST /admin/login/?next=/admin/ HTTP/1.1" 200 12628
+INFO 2025-08-05 00:43:06,058 basehttp 1916 22480 "POST /admin/login/?next=/admin/ HTTP/1.1" 200 12644
+ERROR 2025-08-05 00:43:27,431 log 1916 6404 Internal Server Error: /admin/login/
+Traceback (most recent call last):
+  File "C:\Users\PC\Desktop\alx-project-nexus\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC\Desktop\alx-project-nexus\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC\Desktop\alx-project-nexus\venv\Lib\site-packages\django\utils\decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC\Desktop\alx-project-nexus\venv\Lib\site-packages\django\views\decorators\cache.py", line 80, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC\Desktop\alx-project-nexus\venv\Lib\site-packages\django\contrib\admin\sites.py", line 449, in login
+    return LoginView.as_view(**defaults)(request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC\Desktop\alx-project-nexus\venv\Lib\site-packages\django\views\generic\base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC\Desktop\alx-project-nexus\venv\Lib\site-packages\django\utils\decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC\Desktop\alx-project-nexus\venv\Lib\site-packages\django\utils\decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC\Desktop\alx-project-nexus\venv\Lib\site-packages\django\views\decorators\debug.py", line 143, in sensitive_post_parameters_wrapper
+    return view(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC\Desktop\alx-project-nexus\venv\Lib\site-packages\django\utils\decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC\Desktop\alx-project-nexus\venv\Lib\site-packages\django\utils\decorators.py", line 192, in _view_wrapper
+    result = _process_exception(request, e)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC\Desktop\alx-project-nexus\venv\Lib\site-packages\django\utils\decorators.py", line 190, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC\Desktop\alx-project-nexus\venv\Lib\site-packages\django\utils\decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC\Desktop\alx-project-nexus\venv\Lib\site-packages\django\views\decorators\cache.py", line 80, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC\Desktop\alx-project-nexus\venv\Lib\site-packages\django\contrib\auth\views.py", line 89, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC\Desktop\alx-project-nexus\venv\Lib\site-packages\django\views\generic\base.py", line 144, in dispatch
+    return handler(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC\Desktop\alx-project-nexus\venv\Lib\site-packages\django\views\generic\edit.py", line 151, in post
+    return self.form_valid(form)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC\Desktop\alx-project-nexus\venv\Lib\site-packages\django\contrib\auth\views.py", line 108, in form_valid
+    auth_login(self.request, form.get_user())
+  File "C:\Users\PC\Desktop\alx-project-nexus\venv\Lib\site-packages\django\contrib\auth\__init__.py", line 197, in login
+    user_logged_in.send(sender=user.__class__, request=request, user=user)
+  File "C:\Users\PC\Desktop\alx-project-nexus\venv\Lib\site-packages\django\dispatch\dispatcher.py", line 189, in send
+    response = receiver(signal=self, sender=sender, **named)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC\Desktop\alx-project-nexus\venv\Lib\site-packages\django\contrib\auth\models.py", line 24, in update_last_login
+    user.save(update_fields=["last_login"])
+  File "C:\Users\PC\Desktop\alx-project-nexus\venv\Lib\site-packages\django\contrib\auth\base_user.py", line 65, in save
+    super().save(*args, **kwargs)
+  File "C:\Users\PC\Desktop\alx-project-nexus\venv\Lib\site-packages\django\db\models\base.py", line 902, in save
+    self.save_base(
+  File "C:\Users\PC\Desktop\alx-project-nexus\venv\Lib\site-packages\django\db\models\base.py", line 1023, in save_base
+    post_save.send(
+  File "C:\Users\PC\Desktop\alx-project-nexus\venv\Lib\site-packages\django\dispatch\dispatcher.py", line 189, in send
+    response = receiver(signal=self, sender=sender, **named)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC\Desktop\alx-project-nexus\ecommerce_backend\users\models.py", line 34, in save_user_profile
+    instance.profile.save()
+    ^^^^^^^^^^^^^^^^
+  File "C:\Users\PC\Desktop\alx-project-nexus\venv\Lib\site-packages\django\db\models\fields\related_descriptors.py", line 534, in __get__
+    raise self.RelatedObjectDoesNotExist(
+django.contrib.auth.models.User.profile.RelatedObjectDoesNotExist: User has no profile.
+ERROR 2025-08-05 00:43:27,608 basehttp 1916 6404 "POST /admin/login/?next=/admin/ HTTP/1.1" 500 204078
+INFO 2025-08-06 21:58:31,728 autoreload 19280 8896 Watching for file changes with StatReloader
+INFO 2025-08-06 21:58:51,680 autoreload 19280 8896 C:\Users\PC\Desktop\alx-project-nexus\ecommerce_backend\products\serializers.py changed, reloading.
+INFO 2025-08-06 21:58:54,475 autoreload 17968 3112 Watching for file changes with StatReloader
+INFO 2025-08-06 22:05:34,343 autoreload 17968 3112 C:\Users\PC\Desktop\alx-project-nexus\ecommerce_backend\users\views.py changed, reloading.
+INFO 2025-08-06 22:05:35,951 autoreload 14140 7060 Watching for file changes with StatReloader
+INFO 2025-08-06 22:07:45,009 autoreload 14140 7060 C:\Users\PC\Desktop\alx-project-nexus\ecommerce_backend\ecommerce_backend\settings.py changed, reloading.
+INFO 2025-08-06 22:07:49,147 autoreload 10008 5152 Watching for file changes with StatReloader
+INFO 2025-08-06 22:10:28,368 basehttp 10008 3656 "GET / HTTP/1.1" 200 16968
+INFO 2025-08-06 22:10:30,236 basehttp 10008 3656 "GET / HTTP/1.1" 200 16968
+INFO 2025-08-06 22:10:37,006 basehttp 10008 3656 "GET /swagger/ HTTP/1.1" 200 10526
+INFO 2025-08-06 22:10:37,568 basehttp 10008 3656 "GET /swagger/?format=openapi HTTP/1.1" 200 11468
+INFO 2025-08-06 22:11:04,347 basehttp 10008 3656 "GET / HTTP/1.1" 200 16968
+INFO 2025-08-06 22:11:18,334 basehttp 10008 3656 "GET /redoc/ HTTP/1.1" 200 9235
+INFO 2025-08-06 22:11:18,853 basehttp 10008 3656 "GET /redoc/?format=openapi HTTP/1.1" 200 11468
+INFO 2025-08-06 22:11:57,499 basehttp 10008 3656 "GET / HTTP/1.1" 200 16968
+INFO 2025-08-06 22:12:15,657 basehttp 10008 3656 "GET /swagger/ HTTP/1.1" 200 10526
+INFO 2025-08-06 22:12:16,247 basehttp 10008 3656 "GET /swagger/?format=openapi HTTP/1.1" 200 11468
+INFO 2025-08-06 22:12:23,365 basehttp 10008 3656 "GET /admin/ HTTP/1.1" 200 18232
+INFO 2025-08-06 22:12:30,051 basehttp 10008 3656 "GET /admin/products/product/add/ HTTP/1.1" 200 21513
+INFO 2025-08-06 22:12:30,376 basehttp 10008 3656 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-06 22:12:36,908 basehttp 10008 3656 "GET /admin/ HTTP/1.1" 200 18232
+INFO 2025-08-06 22:12:40,509 basehttp 10008 3656 "GET /admin/products/product/ HTTP/1.1" 200 27955
+INFO 2025-08-06 22:12:40,818 basehttp 10008 3656 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-06 22:12:44,925 basehttp 10008 3656 "GET /admin/products/product/15/change/ HTTP/1.1" 200 21831
+INFO 2025-08-06 22:12:45,212 basehttp 10008 3656 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-06 22:12:55,255 basehttp 10008 3656 "POST /admin/products/product/15/change/ HTTP/1.1" 302 0
+INFO 2025-08-06 22:12:55,633 basehttp 10008 3656 "GET /admin/products/product/ HTTP/1.1" 200 28170
+INFO 2025-08-06 22:12:55,941 basehttp 10008 3656 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-06 22:13:17,270 basehttp 10008 3656 "GET /admin/products/product/ HTTP/1.1" 200 27955
+INFO 2025-08-06 22:13:17,588 basehttp 10008 3656 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-06 22:13:36,872 basehttp 10008 3656 "GET /admin/ HTTP/1.1" 200 18596
+INFO 2025-08-06 22:13:46,910 basehttp 10008 3656 "GET / HTTP/1.1" 200 16968
+INFO 2025-08-06 22:13:59,548 autoreload 10008 5152 C:\Users\PC\Desktop\alx-project-nexus\ecommerce_backend\ecommerce_backend\settings.py changed, reloading.
+INFO 2025-08-06 22:14:03,172 autoreload 20956 21572 Watching for file changes with StatReloader
