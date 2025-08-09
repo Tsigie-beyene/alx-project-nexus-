@@ -150,9 +150,13 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # Security Settings
+# Ensure Django knows it's behind a proxy that terminates SSL (Railway/Render, etc.)
+# so request.is_secure() works and Swagger uses https instead of http.
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+USE_X_FORWARDED_HOST = True
+
 if not DEBUG:
     # Security headers for production
-    SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
     SECURE_BROWSER_XSS_FILTER = True
     SECURE_CONTENT_TYPE_NOSNIFF = True
     SECURE_HSTS_INCLUDE_SUBDOMAINS = True
@@ -251,6 +255,15 @@ REST_FRAMEWORK = {
         'rest_framework.parsers.FormParser',
         'rest_framework.parsers.MultiPartParser',
     ],
+}
+
+# Swagger / drf-yasg settings: avoid session auth (no CSRF header),
+# and allow overriding the base URL if needed.
+SWAGGER_SETTINGS = {
+    'USE_SESSION_AUTH': False,
+    # Optionally pin a base URL in environments where headers are stripped.
+    # Set SWAGGER_BASE_URL in env (e.g., https://web-production-9936.up.railway.app)
+    'DEFAULT_API_URL': os.getenv('SWAGGER_BASE_URL')
 }
 
 # JWT Settings

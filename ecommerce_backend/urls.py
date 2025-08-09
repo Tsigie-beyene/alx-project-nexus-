@@ -49,9 +49,12 @@ schema_view = get_schema_view(
     ),
     public=True,
     permission_classes=[],
+    # IMPORTANT: Patterns here must mirror the actual URL prefixes below.
+    # Otherwise, Swagger will generate incorrect paths and "Try it out"
+    # will call non-existent endpoints.
     patterns=[
-        path('api/', include('products.urls')),
-        path('api/', include('users.urls')),
+        path('api/products/', include('products.urls')),
+        path('api/users/', include('users.urls')),
     ],
 )
 
