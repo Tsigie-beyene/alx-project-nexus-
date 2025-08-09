@@ -77,7 +77,14 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'ecommerce_backend.wsgi.application'
 
-# Database
+# Database (SQLite by default for local dev)
+# Helper to read env with aliases (PG* or POSTGRES_*)
+def env_alias(*names: str, default: str | None = None) -> str | None:
+    for name in names:
+        val = os.getenv(name)
+        if val not in (None, ""):
+            return val
+    return default
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
@@ -85,11 +92,24 @@ DATABASES = {
     }
 }
 
-# If DATABASE_URL is provided (Railway), use it
+# Prefer DATABASE_URL when present (Railway/Heroku style)
 if os.getenv('DATABASE_URL'):
-    DATABASES['default'] = dj_database_url.parse(os.getenv('DATABASE_URL'))
+    # Use dj_database_url.config to include sensible defaults (conn_max_age, ssl)
+    db_from_env = dj_database_url.config(conn_max_age=600, ssl_require=True)
+    if db_from_env:
+        DATABASES['default'] = db_from_env
+        # Some providers omit HOST in the URL and default to Unix socket.
+        # Force TCP using PG* env vars when available to avoid socket errors.
+        DATABASES['default']['HOST'] = env_alias('PGHOST', 'RAILWAY_PRIVATE_DOMAIN', default=DATABASES['default'].get('HOST') or '')
+        DATABASES['default']['PORT'] = env_alias('PGPORT', default=DATABASES['default'].get('PORT') or '5432')
+        DATABASES['default']['USER'] = env_alias('PGUSER', 'POSTGRES_USER', default=DATABASES['default'].get('USER') or '')
+        DATABASES['default']['PASSWORD'] = env_alias('PGPASSWORD', 'POSTGRES_PASSWORD', default=DATABASES['default'].get('PASSWORD') or '')
+        DATABASES['default']['NAME'] = env_alias('PGDATABASE', 'POSTGRES_DB', default=DATABASES['default'].get('NAME') or '')
+        # Ensure sslmode if not set
+        DATABASES['default'].setdefault('OPTIONS', {})
+        DATABASES['default']['OPTIONS'].setdefault('sslmode', 'require')
 elif os.getenv('DB_ENGINE') == 'django.db.backends.postgresql':
-    # Fallback to manual PostgreSQL configuration
+    # Manual PostgreSQL configuration
     DATABASES['default'] = {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': os.getenv('DB_NAME', 'ecommerce_backend_db'),
@@ -97,18 +117,32 @@ elif os.getenv('DB_ENGINE') == 'django.db.backends.postgresql':
         'PASSWORD': os.getenv('DB_PASSWORD', ''),
         'HOST': os.getenv('DB_HOST', 'localhost'),
         'PORT': os.getenv('DB_PORT', '5432'),
+        'OPTIONS': {'sslmode': 'require'}
     }
-else:
-    # Check for Railway's PostgreSQL environment variables
-    if os.getenv('PGHOST'):
-        DATABASES['default'] = {
-            'ENGINE': 'django.db.backends.postgresql',
-            'NAME': os.getenv('PGDATABASE', 'railway'),
-            'USER': os.getenv('PGUSER', 'postgres'),
-            'PASSWORD': os.getenv('PGPASSWORD', ''),
-            'HOST': os.getenv('PGHOST', 'localhost'),
-            'PORT': os.getenv('PGPORT', '5432'),
-        }
+elif os.getenv('PGHOST') or os.getenv('RAILWAY_PRIVATE_DOMAIN'):
+    # Railway PG* variables
+    DATABASES['default'] = {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': env_alias('PGDATABASE', 'POSTGRES_DB', default='railway'),
+        'USER': env_alias('PGUSER', 'POSTGRES_USER', default='postgres'),
+        'PASSWORD': env_alias('PGPASSWORD', 'POSTGRES_PASSWORD', default=''),
+        'HOST': env_alias('PGHOST', 'RAILWAY_PRIVATE_DOMAIN', default='localhost'),
+        'PORT': env_alias('PGPORT', default='5432'),
+        'OPTIONS': {'sslmode': 'require'}
+    }
+
+# Final safety net: if using Postgres but NAME or USER is empty, try to infer
+if DATABASES['default']['ENGINE'] == 'django.db.backends.postgresql':
+    if not DATABASES['default'].get('NAME'):
+        DATABASES['default']['NAME'] = env_alias('PGDATABASE', 'POSTGRES_DB', default='railway')
+    if not DATABASES['default'].get('USER'):
+        DATABASES['default']['USER'] = env_alias('PGUSER', 'POSTGRES_USER', default='postgres')
+    if not DATABASES['default'].get('HOST'):
+        DATABASES['default']['HOST'] = env_alias('PGHOST', 'RAILWAY_PRIVATE_DOMAIN', default='localhost')
+    if not DATABASES['default'].get('PORT'):
+        DATABASES['default']['PORT'] = env_alias('PGPORT', default='5432')
+    DATABASES['default'].setdefault('OPTIONS', {})
+    DATABASES['default']['OPTIONS'].setdefault('sslmode', 'require')
 
 # Password validation
 AUTH_PASSWORD_VALIDATORS = [
