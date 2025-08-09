@@ -1156,3 +1156,19 @@ INFO 2025-08-09 10:56:50,846 basehttp 19208 14652 "GET /swagger/?format=openapi 
 INFO 2025-08-09 10:57:03,406 basehttp 19208 28808 "GET /api/info/ HTTP/1.1" 200 398
 INFO 2025-08-09 10:57:25,959 basehttp 19208 24488 "GET /api/info/ HTTP/1.1" 200 398
 INFO 2025-08-09 11:01:09,925 basehttp 19208 2032 "GET /api/info/ HTTP/1.1" 200 398
+INFO 2025-08-10 01:39:03,405 autoreload 17760 8044 Watching for file changes with StatReloader
+INFO 2025-08-10 01:39:36,185 basehttp 17760 19596 "GET /swagger/ HTTP/1.1" 200 13526
+INFO 2025-08-10 01:39:36,333 basehttp 17760 19596 "GET /static/drf-yasg/style.css HTTP/1.1" 200 1047
+INFO 2025-08-10 01:39:36,404 basehttp 17760 8508 "GET /static/drf-yasg/swagger-ui-dist/swagger-ui.css HTTP/1.1" 200 145206
+INFO 2025-08-10 01:39:36,492 basehttp 17760 13564 "GET /static/drf-yasg/swagger-ui-dist/swagger-ui-bundle.js HTTP/1.1" 200 1046583
+INFO 2025-08-10 01:39:36,555 basehttp 17760 19596 "GET /static/debug_toolbar/css/toolbar.css HTTP/1.1" 200 16630
+INFO 2025-08-10 01:39:36,805 basehttp 17760 13564 "GET /static/drf-yasg/insQ.min.js HTTP/1.1" 200 2093
+INFO 2025-08-10 01:39:37,004 basehttp 17760 8508 "GET /static/drf-yasg/swagger-ui-dist/swagger-ui-standalone-preset.js HTTP/1.1" 200 322863
+INFO 2025-08-10 01:39:37,063 basehttp 17760 28708 "GET /static/drf-yasg/swagger-ui-init.js HTTP/1.1" 200 15480
+INFO 2025-08-10 01:39:37,202 basehttp 17760 1752 "GET /static/debug_toolbar/js/toolbar.js HTTP/1.1" 200 14601
+INFO 2025-08-10 01:39:37,220 basehttp 17760 21388 "GET /static/drf-yasg/immutable.min.js HTTP/1.1" 200 56904
+INFO 2025-08-10 01:39:37,413 basehttp 17760 21388 "GET /static/debug_toolbar/css/print.css HTTP/1.1" 200 43
+INFO 2025-08-10 01:39:37,472 basehttp 17760 1752 "GET /static/debug_toolbar/js/utils.js HTTP/1.1" 200 4742
+INFO 2025-08-10 01:39:37,759 basehttp 17760 21388 "GET /static/drf-yasg/swagger-ui-dist/favicon-32x32.png HTTP/1.1" 200 628
+INFO 2025-08-10 01:39:37,759 basehttp 17760 1752 "GET /swagger/?format=openapi HTTP/1.1" 200 11619
+INFO 2025-08-10 01:39:57,371 basehttp 17760 1752 "GET /api/products/categories/ HTTP/1.1" 200 52

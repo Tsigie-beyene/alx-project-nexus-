@@ -1,27 +1,39 @@
-# E-Commerce API Backend
+# E-Commerce Backend - ProDev BE
 
-A robust RESTful API backend for an e-commerce product catalog built with Django and Django REST Framework.
+A robust Django-based backend system for e-commerce product catalog management, designed for ALX Backend Engineering milestone.
 
-## 🚀 Features
+## 🎯 Project Overview
 
-- **RESTful API** with comprehensive CRUD operations
-- **JWT Authentication** for secure user management
-- **Product & Category Management** with filtering and search
-- **User Management** with registration and authentication
-- **Swagger/OpenAPI Documentation** for easy API exploration
-- **Database Optimization** with proper indexing
-- **Environment Configuration** for secure deployment
-- **Django Debug Toolbar** for development debugging
+This case study focuses on developing a robust backend system to support an e-commerce product catalog. The backend handles product data management, user authentication, and APIs for filtering, sorting, and pagination, simulating a real-world scenario for backend engineers.
 
-## 🛠️ Tech Stack
+## 🚀 Project Goals
 
-- **Backend**: Django 5.2.4
-- **API Framework**: Django REST Framework 3.16.0
-- **Authentication**: JWT (JSON Web Tokens)
-- **Database**: PostgreSQL
-- **Documentation**: Swagger/OpenAPI (drf-yasg)
-- **Filtering**: django-filter
-- **Environment**: python-dotenv
+- **CRUD APIs**: Build APIs for managing products, categories, and user authentication
+- **Filtering, Sorting, Pagination**: Implement robust logic for efficient product discovery
+- **Database Optimization**: Design a high-performance database schema to support seamless queries
+
+## 🛠️ Technologies Used
+
+- **Django**: For building a scalable backend framework
+- **PostgreSQL**: As the relational database for optimized performance
+- **JWT**: For secure user authentication
+- **Swagger/OpenAPI**: To document and test APIs
+- **Django REST Framework**: For building RESTful APIs
+- **Django Filters**: For advanced filtering capabilities
+
+## ✨ Key Features
+
+### 1. CRUD Operations
+- Create, read, update, and delete operations for products and categories
+- User authentication and management features using JWT
+
+### 2. API Features
+- **Filtering and Sorting**: Allow users to filter products by category and sort by price
+- **Pagination**: Implement paginated responses for large product datasets
+
+### 3. API Documentation
+- Use Swagger to generate API documentation
+- Publish hosted API docs for easy frontend consumption
 
 ## 📋 Prerequisites
 
@@ -51,23 +63,18 @@ pip install -r requirements.txt
 ```
 
 ### 4. Environment Configuration
-Copy the example configuration file:
-```bash
-cp config.env.example config.env
-```
-
-Edit `config.env` with your database credentials:
+Create a `config.env` file in the root directory:
 ```env
 # Django Settings
 SECRET_KEY=your-secret-key-here
 DEBUG=True
 ALLOWED_HOSTS=localhost,127.0.0.1,0.0.0.0
 
-# Database Settings
+# Database Settings (PostgreSQL)
 DB_ENGINE=django.db.backends.postgresql
-DB_NAME=your_database_name
-DB_USER=your_database_user
-DB_PASSWORD=your_database_password
+DB_NAME=ecommerce_backend_db
+DB_USER=postgres
+DB_PASSWORD=your_password
 DB_HOST=localhost
 DB_PORT=5432
 
@@ -78,7 +85,6 @@ JWT_REFRESH_TOKEN_LIFETIME=1440
 
 ### 5. Database Setup
 ```bash
-cd ecommerce_backend
 python manage.py makemigrations
 python manage.py migrate
 ```
@@ -88,7 +94,12 @@ python manage.py migrate
 python manage.py createsuperuser
 ```
 
-### 7. Run the Development Server
+### 7. Seed Sample Data (Optional)
+```bash
+python manage.py seed_data
+```
+
+### 8. Run the Development Server
 ```bash
 python manage.py runserver
 ```
@@ -102,7 +113,7 @@ The API will be available at `http://127.0.0.1:8000/`
 http://127.0.0.1:8000/
 ```
 
-### API Information
+### API Endpoints
 - **Root Endpoint**: `GET /` - API information and available endpoints
 - **Documentation**: `GET /swagger/` - Interactive API documentation
 - **Admin Panel**: `GET /admin/` - Django admin interface
@@ -119,31 +130,6 @@ Content-Type: application/json
 {
     "username": "your_username",
     "password": "your_password"
-}
-```
-
-**Response:**
-```json
-{
-    "access": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9....",
-    "refresh": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9...."
-}
-```
-
-### Refresh Token
-```http
-POST /api/token/refresh/
-Content-Type: application/json
-
-{
-    "refresh": "your_refresh_token"
-}
-```
-
-**Response:**
-```json
-{
-    "access": "new_access_token_here"
 }
 ```
 
@@ -172,72 +158,12 @@ GET /api/products/products/
 GET /api/products/products/?search=laptop&category=1&ordering=-price
 ```
 
-**Response:**
-```json
-{
-    "count": 10,
-    "next": "http://127.0.0.1:8000/api/products/products/?page=2",
-    "previous": null,
-    "results": [
-        {
-            "id": 1,
-            "name": "Gaming Laptop",
-            "description": "High-performance gaming laptop",
-            "price": "1299.99",
-            "stock": 5,
-            "category": {
-                "id": 1,
-                "name": "Electronics",
-                "description": "Electronic devices and gadgets"
-            },
-            "category_id": 1,
-            "created_at": "2024-01-15T10:30:00Z",
-            "updated_at": "2024-01-15T10:30:00Z"
-        }
-    ]
-}
-```
-
-### Get Single Product
-```http
-GET /api/products/products/{id}/
-```
-
-### Create Product
-```http
-POST /api/products/products/
-Authorization: Bearer your_access_token
-Content-Type: application/json
-
-{
-    "name": "New Product",
-    "description": "Product description",
-    "price": "99.99",
-    "stock": 10,
-    "category_id": 1
-}
-```
-
-### Update Product
-```http
-PUT /api/products/products/{id}/
-Authorization: Bearer your_access_token
-Content-Type: application/json
-
-{
-    "name": "Updated Product Name",
-    "description": "Updated description",
-    "price": "89.99",
-    "stock": 15,
-    "category_id": 1
-}
-```
-
-### Delete Product
-```http
-DELETE /api/products/products/{id}/
-Authorization: Bearer your_access_token
-```
+### CRUD Operations
+- `GET /api/products/products/` - List all products
+- `POST /api/products/products/` - Create new product
+- `GET /api/products/products/{id}/` - Get single product
+- `PUT /api/products/products/{id}/` - Update product
+- `DELETE /api/products/products/{id}/` - Delete product
 
 ## 📂 Categories API
 
@@ -250,40 +176,12 @@ GET /api/products/categories/
 - `search`: Search in name and description
 - `ordering`: Sort by field (name, id)
 
-### Get Single Category
-```http
-GET /api/products/categories/{id}/
-```
-
-### Create Category
-```http
-POST /api/products/categories/
-Authorization: Bearer your_access_token
-Content-Type: application/json
-
-{
-    "name": "New Category",
-    "description": "Category description"
-}
-```
-
-### Update Category
-```http
-PUT /api/products/categories/{id}/
-Authorization: Bearer your_access_token
-Content-Type: application/json
-
-{
-    "name": "Updated Category",
-    "description": "Updated description"
-}
-```
-
-### Delete Category
-```http
-DELETE /api/products/categories/{id}/
-Authorization: Bearer your_access_token
-```
+### CRUD Operations
+- `GET /api/products/categories/` - List all categories
+- `POST /api/products/categories/` - Create new category
+- `GET /api/products/categories/{id}/` - Get single category
+- `PUT /api/products/categories/{id}/` - Update category
+- `DELETE /api/products/categories/{id}/` - Delete category
 
 ## 👥 Users API
 
@@ -301,67 +199,27 @@ Content-Type: application/json
 ```
 
 ### User Profile
+- `GET /api/users/profile/` - Get user profile
+- `PUT /api/users/profile/` - Update user profile
+
+## 🔍 Filtering and Search Examples
+
+### Product Filtering
 ```http
-GET /api/users/profile/
-Authorization: Bearer your_access_token
-```
-
-### Update Profile
-```http
-PUT /api/users/profile/
-Authorization: Bearer your_access_token
-Content-Type: application/json
-
-{
-    "username": "updated_username",
-    "email": "updated@example.com"
-}
-```
-
-## 🔍 Filtering and Search
-
-### Product Filtering Examples
-
-**Filter by Category:**
-```http
+# Filter by Category
 GET /api/products/products/?category=1
-```
 
-**Search Products:**
-```http
+# Search Products
 GET /api/products/products/?search=laptop
-```
 
-**Filter by Stock:**
-```http
+# Filter by Stock
 GET /api/products/products/?stock=5
-```
 
-**Sort by Price (High to Low):**
-```http
+# Sort by Price (High to Low)
 GET /api/products/products/?ordering=-price
-```
 
-**Sort by Creation Date (Newest First):**
-```http
-GET /api/products/products/?ordering=-created_at
-```
-
-**Combined Filters:**
-```http
+# Combined Filters
 GET /api/products/products/?category=1&search=laptop&ordering=-price&page=2
-```
-
-### Category Filtering Examples
-
-**Search Categories:**
-```http
-GET /api/products/categories/?search=electronics
-```
-
-**Sort Categories:**
-```http
-GET /api/products/categories/?ordering=name
 ```
 
 ## 📄 Pagination
@@ -378,89 +236,23 @@ The API uses page-based pagination with a default page size of 10 items.
 }
 ```
 
-**Custom Page:**
-```http
-GET /api/products/products/?page=2
-```
-
-## 🛡️ Error Handling
-
-The API returns appropriate HTTP status codes and error messages:
-
-### Common Error Responses
-
-**400 Bad Request:**
-```json
-{
-    "field_name": ["Error message for this field"]
-}
-```
-
-**401 Unauthorized:**
-```json
-{
-    "detail": "Authentication credentials were not provided."
-}
-```
-
-**403 Forbidden:**
-```json
-{
-    "detail": "You do not have permission to perform this action."
-}
-```
-
-**404 Not Found:**
-```json
-{
-    "detail": "Not found."
-}
-```
-
-**500 Internal Server Error:**
-```json
-{
-    "detail": "Internal server error."
-}
-```
-
 ## 🧪 Testing the API
 
 ### Using curl
-
-**Get API Info:**
 ```bash
+# Get API Info
 curl http://127.0.0.1:8000/
-```
 
-**Get Access Token:**
-```bash
+# Get Access Token
 curl -X POST http://127.0.0.1:8000/api/token/ \
   -H "Content-Type: application/json" \
   -d '{"username": "your_username", "password": "your_password"}'
-```
 
-**List Products:**
-```bash
+# List Products
 curl http://127.0.0.1:8000/api/products/products/
 ```
 
-**Create Product (with authentication):**
-```bash
-curl -X POST http://127.0.0.1:8000/api/products/products/ \
-  -H "Authorization: Bearer your_access_token" \
-  -H "Content-Type: application/json" \
-  -d '{
-    "name": "Test Product",
-    "description": "Test description",
-    "price": "29.99",
-    "stock": 5,
-    "category_id": 1
-  }'
-```
-
 ### Using Python requests
-
 ```python
 import requests
 
@@ -480,19 +272,6 @@ headers = {"Authorization": f"Bearer {token}"}
 # List products
 products = requests.get(f"{base_url}/api/products/products/", headers=headers)
 print(products.json())
-
-# Create a product
-new_product = requests.post(f"{base_url}/api/products/products/", 
-    headers=headers,
-    json={
-        "name": "New Product",
-        "description": "Description",
-        "price": "99.99",
-        "stock": 10,
-        "category_id": 1
-    }
-)
-print(new_product.json())
 ```
 
 ## 🔧 Development
@@ -517,20 +296,13 @@ python manage.py migrate
 python manage.py shell
 ```
 
-### Debug Toolbar
-The Django Debug Toolbar is automatically enabled in development mode and provides:
-- Database query monitoring
-- Performance profiling
-- Template debugging
-- Request/response analysis
-
 ## 🚀 Deployment
 
 ### Production Settings
 1. Set `DEBUG=False` in your environment variables
 2. Configure a production database
 3. Set up proper `ALLOWED_HOSTS`
-4. Use a production WSGI server (Gunicorn, uWSGI)
+4. Use a production WSGI server (Gunicorn)
 5. Configure static file serving
 6. Set up HTTPS
 
@@ -547,17 +319,33 @@ DB_HOST=your-db-host
 DB_PORT=5432
 ```
 
-## 📝 License
+## 📝 Git Commit Workflow
 
-This project is licensed under the MIT License.
+The project follows a structured commit workflow:
+- `feat: set up Django project with PostgreSQL`
+- `feat: implement user authentication with JWT`
+- `feat: add product APIs with filtering and pagination`
+- `feat: integrate Swagger documentation for API endpoints`
+- `perf: optimize database queries with indexing`
+- `docs: add API usage instructions in Swagger`
 
-## 🤝 Contributing
+## 🎯 Evaluation Criteria
 
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Add tests if applicable
-5. Submit a pull request
+### 1. Functionality
+- CRUD APIs for products, categories, and user authentication
+- Filtering, sorting, and pagination logic implemented effectively
+
+### 2. Code Quality
+- Clean, maintainable, and well-documented code
+- Proper database indexing for high-performance queries
+
+### 3. User Experience
+- API documentation is comprehensive and user-friendly
+- Secure authentication implementation
+
+### 4. Version Control
+- Frequent and descriptive Git commit messages
+- Well-organized repository structure
 
 ## 📞 Support
 
