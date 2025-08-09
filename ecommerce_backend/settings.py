@@ -100,7 +100,9 @@ if os.getenv('DATABASE_URL'):
         DATABASES['default'] = db_from_env
         # Some providers omit HOST in the URL and default to Unix socket.
         # Force TCP using PG* env vars when available to avoid socket errors.
-        DATABASES['default']['HOST'] = env_alias('PGHOST', 'RAILWAY_PRIVATE_DOMAIN', default=DATABASES['default'].get('HOST') or '')
+        # IMPORTANT: Do NOT fall back to this app's RAILWAY_PRIVATE_DOMAIN,
+        # as that would point to the web service instead of the DB service.
+        DATABASES['default']['HOST'] = env_alias('PGHOST', default=DATABASES['default'].get('HOST') or '')
         DATABASES['default']['PORT'] = env_alias('PGPORT', default=DATABASES['default'].get('PORT') or '5432')
         DATABASES['default']['USER'] = env_alias('PGUSER', 'POSTGRES_USER', default=DATABASES['default'].get('USER') or '')
         DATABASES['default']['PASSWORD'] = env_alias('PGPASSWORD', 'POSTGRES_PASSWORD', default=DATABASES['default'].get('PASSWORD') or '')
@@ -119,14 +121,14 @@ elif os.getenv('DB_ENGINE') == 'django.db.backends.postgresql':
         'PORT': os.getenv('DB_PORT', '5432'),
         'OPTIONS': {'sslmode': 'require'}
     }
-elif os.getenv('PGHOST') or os.getenv('RAILWAY_PRIVATE_DOMAIN'):
+elif os.getenv('PGHOST'):
     # Railway PG* variables
     DATABASES['default'] = {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': env_alias('PGDATABASE', 'POSTGRES_DB', default='railway'),
         'USER': env_alias('PGUSER', 'POSTGRES_USER', default='postgres'),
         'PASSWORD': env_alias('PGPASSWORD', 'POSTGRES_PASSWORD', default=''),
-        'HOST': env_alias('PGHOST', 'RAILWAY_PRIVATE_DOMAIN', default='localhost'),
+        'HOST': env_alias('PGHOST', default='localhost'),
         'PORT': env_alias('PGPORT', default='5432'),
         'OPTIONS': {'sslmode': 'require'}
     }
@@ -138,7 +140,7 @@ if DATABASES['default']['ENGINE'] == 'django.db.backends.postgresql':
     if not DATABASES['default'].get('USER'):
         DATABASES['default']['USER'] = env_alias('PGUSER', 'POSTGRES_USER', default='postgres')
     if not DATABASES['default'].get('HOST'):
-        DATABASES['default']['HOST'] = env_alias('PGHOST', 'RAILWAY_PRIVATE_DOMAIN', default='localhost')
+        DATABASES['default']['HOST'] = env_alias('PGHOST', default='localhost')
     if not DATABASES['default'].get('PORT'):
         DATABASES['default']['PORT'] = env_alias('PGPORT', default='5432')
     DATABASES['default'].setdefault('OPTIONS', {})
