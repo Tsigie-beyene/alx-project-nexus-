@@ -1134,3 +1134,25 @@ INFO 2025-08-07 17:54:24,691 basehttp 22048 5736 - Broken pipe from ('127.0.0.1'
 INFO 2025-08-07 17:54:26,119 basehttp 22048 4864 "POST /admin/login/?next=/admin/ HTTP/1.1" 302 0
 INFO 2025-08-07 17:54:26,334 basehttp 22048 4864 "GET /admin/ HTTP/1.1" 200 19603
 INFO 2025-08-07 17:54:26,407 basehttp 22048 4864 "GET /static/admin/img/icon-deletelink.svg HTTP/1.1" 200 392
+INFO 2025-08-09 10:56:01,499 autoreload 19208 23340 Watching for file changes with StatReloader
+INFO 2025-08-09 10:56:16,253 basehttp 19208 28808 "GET / HTTP/1.1" 200 20546
+INFO 2025-08-09 10:56:35,593 basehttp 19208 17388 "GET / HTTP/1.1" 200 20546
+INFO 2025-08-09 10:56:35,737 basehttp 19208 17388 "GET /static/debug_toolbar/css/toolbar.css HTTP/1.1" 200 16630
+INFO 2025-08-09 10:56:35,743 basehttp 19208 14832 "GET /static/debug_toolbar/js/toolbar.js HTTP/1.1" 200 14601
+INFO 2025-08-09 10:56:36,614 basehttp 19208 14832 "GET /static/debug_toolbar/css/print.css HTTP/1.1" 200 43
+INFO 2025-08-09 10:56:36,894 basehttp 19208 14832 "GET /static/debug_toolbar/js/utils.js HTTP/1.1" 200 4742
+WARNING 2025-08-09 10:56:38,036 basehttp 19208 18368 "GET /favicon.ico HTTP/1.1" 404 15734
+INFO 2025-08-09 10:56:40,925 basehttp 19208 18368 "GET /swagger/ HTTP/1.1" 200 14105
+INFO 2025-08-09 10:56:40,952 basehttp 19208 18368 "GET /static/drf-yasg/style.css HTTP/1.1" 200 1047
+INFO 2025-08-09 10:56:40,975 basehttp 19208 18368 "GET /static/drf-yasg/swagger-ui-dist/swagger-ui.css HTTP/1.1" 200 145206
+INFO 2025-08-09 10:56:40,990 basehttp 19208 25164 "GET /static/drf-yasg/swagger-ui-dist/swagger-ui-bundle.js HTTP/1.1" 200 1046583
+INFO 2025-08-09 10:56:41,014 basehttp 19208 18692 "GET /static/drf-yasg/insQ.min.js HTTP/1.1" 200 2093
+INFO 2025-08-09 10:56:41,020 basehttp 19208 21232 "GET /static/drf-yasg/immutable.min.js HTTP/1.1" 200 56904
+INFO 2025-08-09 10:56:41,024 basehttp 19208 16292 "GET /static/drf-yasg/swagger-ui-dist/swagger-ui-standalone-preset.js HTTP/1.1" 200 322863
+INFO 2025-08-09 10:56:41,039 basehttp 19208 24236 "GET /static/drf-yasg/swagger-ui-init.js HTTP/1.1" 200 15480
+INFO 2025-08-09 10:56:41,770 basehttp 19208 16292 "GET /swagger/?format=openapi HTTP/1.1" 200 11477
+INFO 2025-08-09 10:56:41,772 basehttp 19208 21232 "GET /static/drf-yasg/swagger-ui-dist/favicon-32x32.png HTTP/1.1" 200 628
+INFO 2025-08-09 10:56:50,846 basehttp 19208 14652 "GET /swagger/?format=openapi HTTP/1.1" 200 11477
+INFO 2025-08-09 10:57:03,406 basehttp 19208 28808 "GET /api/info/ HTTP/1.1" 200 398
+INFO 2025-08-09 10:57:25,959 basehttp 19208 24488 "GET /api/info/ HTTP/1.1" 200 398
+INFO 2025-08-09 11:01:09,925 basehttp 19208 2032 "GET /api/info/ HTTP/1.1" 200 398
