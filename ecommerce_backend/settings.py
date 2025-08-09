@@ -92,24 +92,51 @@ DATABASES = {
     }
 }
 
-# Prefer DATABASE_URL when present (Railway/Heroku style)
+# Prefer DATABASE_URL when present (Railway/Heroku style). If not present,
+# fall back to DATABASE_PUBLIC_URL or TCP proxy domain.
+db_from_env = None
 if os.getenv('DATABASE_URL'):
-    # Use dj_database_url.config to include sensible defaults (conn_max_age, ssl)
-    db_from_env = dj_database_url.config(conn_max_age=600, ssl_require=True)
-    if db_from_env:
-        DATABASES['default'] = db_from_env
-        # Some providers omit HOST in the URL and default to Unix socket.
-        # Force TCP using PG* env vars when available to avoid socket errors.
-        # IMPORTANT: Do NOT fall back to this app's RAILWAY_PRIVATE_DOMAIN,
-        # as that would point to the web service instead of the DB service.
-        DATABASES['default']['HOST'] = env_alias('PGHOST', default=DATABASES['default'].get('HOST') or '')
-        DATABASES['default']['PORT'] = env_alias('PGPORT', default=DATABASES['default'].get('PORT') or '5432')
-        DATABASES['default']['USER'] = env_alias('PGUSER', 'POSTGRES_USER', default=DATABASES['default'].get('USER') or '')
-        DATABASES['default']['PASSWORD'] = env_alias('PGPASSWORD', 'POSTGRES_PASSWORD', default=DATABASES['default'].get('PASSWORD') or '')
-        DATABASES['default']['NAME'] = env_alias('PGDATABASE', 'POSTGRES_DB', default=DATABASES['default'].get('NAME') or '')
-        # Ensure sslmode if not set
-        DATABASES['default'].setdefault('OPTIONS', {})
-        DATABASES['default']['OPTIONS'].setdefault('sslmode', 'require')
+    db_from_env = dj_database_url.parse(os.getenv('DATABASE_URL'), conn_max_age=600, ssl_require=True)
+elif os.getenv('DATABASE_PUBLIC_URL'):
+    db_from_env = dj_database_url.parse(os.getenv('DATABASE_PUBLIC_URL'), conn_max_age=600, ssl_require=True)
+elif env_alias('RAILWAY_TCP_PROXY_DOMAIN'):
+    tcp_host = env_alias('RAILWAY_TCP_PROXY_DOMAIN')
+    tcp_port = env_alias('RAILWAY_TCP_PROXY_PORT', default='5432')
+    user = env_alias('PGUSER', 'POSTGRES_USER', default='postgres')
+    pwd = env_alias('PGPASSWORD', 'POSTGRES_PASSWORD', default='')
+    name = env_alias('PGDATABASE', 'POSTGRES_DB', default='railway')
+    db_from_env = dj_database_url.parse(
+        f"postgresql://{user}:{pwd}@{tcp_host}:{tcp_port}/{name}",
+        conn_max_age=600,
+        ssl_require=True,
+    )
+
+if db_from_env:
+    DATABASES['default'] = db_from_env
+    # Prefer PG* env vars for final sanity, but ignore invalid placeholders
+    invalid_hosts = {'', '0.0.0.0', '127.0.0.1', 'localhost'}
+    parsed_host = DATABASES['default'].get('HOST') or ''
+    pg_host = env_alias('PGHOST')
+    DATABASES['default']['HOST'] = pg_host if (pg_host and pg_host not in invalid_hosts) else parsed_host
+
+    parsed_port = str(DATABASES['default'].get('PORT') or '')
+    pg_port = env_alias('PGPORT')
+    DATABASES['default']['PORT'] = pg_port if pg_port else (parsed_port or '5432')
+
+    parsed_user = DATABASES['default'].get('USER') or ''
+    pg_user = env_alias('PGUSER', 'POSTGRES_USER')
+    DATABASES['default']['USER'] = pg_user if pg_user else parsed_user
+
+    parsed_pwd = DATABASES['default'].get('PASSWORD') or ''
+    pg_pwd = env_alias('PGPASSWORD', 'POSTGRES_PASSWORD')
+    DATABASES['default']['PASSWORD'] = pg_pwd if pg_pwd else parsed_pwd
+
+    parsed_name = DATABASES['default'].get('NAME') or ''
+    pg_db = env_alias('PGDATABASE', 'POSTGRES_DB')
+    DATABASES['default']['NAME'] = pg_db if pg_db else parsed_name
+    # Ensure sslmode
+    DATABASES['default'].setdefault('OPTIONS', {})
+    DATABASES['default']['OPTIONS'].setdefault('sslmode', 'require')
 elif os.getenv('DB_ENGINE') == 'django.db.backends.postgresql':
     # Manual PostgreSQL configuration
     DATABASES['default'] = {
