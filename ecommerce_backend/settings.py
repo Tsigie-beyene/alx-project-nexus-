@@ -17,10 +17,11 @@ DEBUG = os.getenv('DEBUG', 'True').lower() == 'true'
 
 ALLOWED_HOSTS = os.getenv(
     'ALLOWED_HOSTS',
-    'localhost,127.0.0.1,0.0.0.0,alx-project-nexus-qmnd.onrender.com'
+    'localhost,127.0.0.1,0.0.0.0,web-production-9936.up.railway.app'
 ).split(',')
 
 CSRF_TRUSTED_ORIGINS = [
+    'https://web-production-9936.up.railway.app',
     'https://alx-project-nexus-qmnd.onrender.com'
 ]
 
@@ -147,6 +148,7 @@ CORS_ALLOWED_ORIGINS = [
     "http://127.0.0.1:3000",
     "http://localhost:8000",
     "http://127.0.0.1:8000",
+    "https://web-production-9936.up.railway.app",
 ]
 
 CORS_ALLOW_CREDENTIALS = True
