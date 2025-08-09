@@ -2,6 +2,7 @@ import os
 from pathlib import Path
 from datetime import timedelta
 from dotenv import load_dotenv
+import dj_database_url
 
 # Load environment variables from config.env file
 load_dotenv('config.env')
@@ -79,14 +80,35 @@ WSGI_APPLICATION = 'ecommerce_backend.wsgi.application'
 # Database
 DATABASES = {
     'default': {
-        'ENGINE': os.getenv('DB_ENGINE', 'django.db.backends.postgresql'),
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+    }
+}
+
+# If DATABASE_URL is provided (Railway), use it
+if os.getenv('DATABASE_URL'):
+    DATABASES['default'] = dj_database_url.parse(os.getenv('DATABASE_URL'))
+elif os.getenv('DB_ENGINE') == 'django.db.backends.postgresql':
+    # Fallback to manual PostgreSQL configuration
+    DATABASES['default'] = {
+        'ENGINE': 'django.db.backends.postgresql',
         'NAME': os.getenv('DB_NAME', 'ecommerce_backend_db'),
-        'USER': os.getenv('DB_USER', 'tsigie'),
-        'PASSWORD': os.getenv('DB_PASSWORD', '122129'),
+        'USER': os.getenv('DB_USER', 'postgres'),
+        'PASSWORD': os.getenv('DB_PASSWORD', ''),
         'HOST': os.getenv('DB_HOST', 'localhost'),
         'PORT': os.getenv('DB_PORT', '5432'),
     }
-}
+else:
+    # Check for Railway's PostgreSQL environment variables
+    if os.getenv('PGHOST'):
+        DATABASES['default'] = {
+            'ENGINE': 'django.db.backends.postgresql',
+            'NAME': os.getenv('PGDATABASE', 'railway'),
+            'USER': os.getenv('PGUSER', 'postgres'),
+            'PASSWORD': os.getenv('PGPASSWORD', ''),
+            'HOST': os.getenv('PGHOST', 'localhost'),
+            'PORT': os.getenv('PGPORT', '5432'),
+        }
 
 # Password validation
 AUTH_PASSWORD_VALIDATORS = [
